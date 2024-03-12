@@ -8,5 +8,31 @@ Write unit tests as described in README.md.
 
 """
 from circle import Circle
+import unittest
 
-# TODO write 3 tests as described above
+
+class CircleTest(unittest.TestCase):
+    def test_add_area_typical(self):
+        c1 = Circle(2)
+        c2 = Circle(4)
+        c3 = c1.add_area(c2)
+        # Checking radius
+        self.assertEqual(4, round(c3.get_radius()))
+
+        # Checking area
+        self.assertEqual(63, round(c3.get_area()))
+
+    def test_add_area_edge(self):
+        c1 = Circle(0)
+        c2 = Circle(6)
+        c3 = c2.add_area(c1)
+        # Checking radius
+        self.assertEqual(6, round(c3.get_radius()))
+
+        # Checking area
+        self.assertEqual(113, round(c3.get_area()))
+
+    def test_radius_negative(self):
+        with self.assertRaises(ValueError):
+            Circle(-2)
+
