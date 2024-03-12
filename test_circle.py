@@ -17,10 +17,10 @@ class CircleTest(unittest.TestCase):
         c2 = Circle(4)
         c3 = c1.add_area(c2)
         # Checking radius
-        self.assertEqual(4, round(c3.get_radius()))
+        self.assertAlmostEquals(4.47213595499958, c3.get_radius(), places=5)
 
         # Checking area
-        self.assertEqual(63, round(c3.get_area()))
+        self.assertAlmostEquals(62.83185307179588, c3.get_area(), places=5)
 
     def test_add_area_edge(self):
         c1 = Circle(0)
