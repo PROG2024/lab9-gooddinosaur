@@ -15,7 +15,12 @@ class Circle:
         Traceback (most recent call last):
         ...
         ValueError: radius must be non-negative
+        >>> c1 = Circle(2)
+        >>> c1.radius
+        2
         """
+
+
         if radius < 0:
             raise ValueError("radius must be non-negative")
         self.radius = radius
