@@ -27,10 +27,10 @@ class CircleTest(unittest.TestCase):
         c2 = Circle(6)
         c3 = c2.add_area(c1)
         # Checking radius
-        self.assertEqual(6, round(c3.get_radius()))
+        self.assertEqual(c2.get_radius(), c3.get_radius())
 
         # Checking area
-        self.assertEqual(113, round(c3.get_area()))
+        self.assertEqual(c2.get_area(), c3.get_area())
 
     def test_radius_negative(self):
         with self.assertRaises(ValueError):
