@@ -7,3 +7,17 @@
 
    You can use pytest or unittest.
 """
+from counter import Counter
+import unittest
+
+
+class TestCounter(unittest.TestCase):
+    def test(self):
+        counter1 = Counter()
+        counter1.increment()
+        counter1.increment()
+        self.assertEqual(2, counter1.count)
+
+        counter2 = Counter()
+        self.assertEqual(counter1, counter2)
+        self.assertEqual(2, counter2.count)
