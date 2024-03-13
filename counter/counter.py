@@ -11,6 +11,7 @@
 
 
 class Counter:
+    """A singleton counter class"""
     _instance = None
 
     def __str__(self):
@@ -24,7 +25,7 @@ class Counter:
 
     def __new__(cls):
         """Create new instance if none exists."""
-        if not cls._instance:
+        if cls._instance is None:
             cls._instance = super().__new__(cls)
             cls._instance.__count = 0
         return cls._instance
